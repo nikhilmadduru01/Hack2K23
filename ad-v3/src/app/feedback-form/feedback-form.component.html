@@ -4,18 +4,16 @@
             feedback
         </mat-icon>
         &nbsp;
-        <div class="feedback-info-text"> 
-             FeedBack  
-        </div>  
+        <div class="feedback-info-text">
+            FeedBack
+        </div>
         <div class="spacer">
 
         </div>
-        <button mat-button color="primary"> Submit </button>
-        
-
+        <button mat-button color="primary" (click)="saveFeedBack()"> Submit </button>
     </div>
     <div class="feedback-form">
-        <mat-form-field appearance="outline" class="rating-form" >
+        <mat-form-field appearance="outline" class="rating-form">
             <mat-label>Select rating</mat-label>
             <mat-select [(ngModel)]="feedback.rating">
                 <mat-option value="1">Excellent</mat-option>
@@ -26,7 +24,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline" class="textarea">
             <mat-label>Comment</mat-label>
-            <textarea matInput [(ngModel)]="feedback.comments"></textarea>
+            <textarea matInput [(ngModel)]="feedback.comment"></textarea>
         </mat-form-field>
     </div>
 </div>
