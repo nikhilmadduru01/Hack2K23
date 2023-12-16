@@ -1,0 +1,232 @@
+[
+    {
+        "questionText": "What is the name of the illustrious italian manufacturer of luxury sports cars?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "automobili lamborghini"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "suvs"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "lamborghini"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "groundbreaking innovations"
+            }
+        ],
+        "correctOption": "a",
+        "answer": "automobili lamborghini"
+    },
+    {
+        "questionText": "Lamborghini manufactures luxury sports cars and what else?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "Bikes"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "Big rigs"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "suvs"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "Hatchbacks"
+            }
+        ],
+        "correctOption": "c",
+        "answer": "suvs"
+    },
+    {
+        "questionText": "What is the illustrious italian manufacturer of luxury sports cars and suvs?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "Lexus"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "Bmw"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "lamborghini"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "Maserati"
+            }
+        ],
+        "correctOption": "c",
+        "answer": "lamborghini"
+    },
+    {
+        "questionText": "What has led to the evolution of Lamborghini?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "groundbreaking innovations"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "suvs"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "lamborghini"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "groundbreaking innovations"
+            }
+        ],
+        "correctOption": "a",
+        "answer": "groundbreaking innovations"
+    },
+    {
+        "questionText": "What is the illustrious italian manufacturer of luxury sports cars and suvs?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "automobili lamborghini"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "suvs"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "lamborghini"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "ferruccio lamborghini"
+            }
+        ],
+        "correctOption": "d",
+        "answer": "ferruccio lamborghini"
+    },
+    {
+        "questionText": "Along with ownership changes, innovations and groundbreaking innovations, what has influenced the evolution of Lamborghini?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "Downturns"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "economic downturns"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "Capital flight"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "Increased unemployment"
+            }
+        ],
+        "correctOption": "b",
+        "answer": "economic downturns"
+    },
+    {
+        "questionText": "What type of performance is lamborghini known for?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "automobili lamborghini"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "suvs"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "formidable performance"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "groundbreaking innovations"
+            }
+        ],
+        "correctOption": "c",
+        "answer": "formidable performance"
+    },
+    {
+        "questionText": "What were lamborghini's first models called?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "automobili lamborghini"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "inaugural models"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "lamborghini"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "groundbreaking innovations"
+            }
+        ],
+        "correctOption": "b",
+        "answer": "inaugural models"
+    },
+    {
+        "questionText": "What is the style of Lamborghini?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "automobili lamborghini"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "suvs"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "lamborghini"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "audacious"
+            }
+        ],
+        "correctOption": "d",
+        "answer": "audacious"
+    },
+    {
+        "questionText": "What type of investment did mycom setdco and indonesian group acquire Lamborghini?",
+        "options": [
+            {
+                "optionId": "a",
+                "optionValue": "Ministry"
+            },
+            {
+                "optionId": "b",
+                "optionValue": "Expert advice"
+            },
+            {
+                "optionId": "c",
+                "optionValue": "guidance"
+            },
+            {
+                "optionId": "d",
+                "optionValue": "Understanding"
+            }
+        ],
+        "correctOption": "c",
+        "answer": "guidance"
+    }
+]
