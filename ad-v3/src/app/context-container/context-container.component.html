@@ -1,1 +1,38 @@
-<p>context-container works!</p>
+<div class="context-container">
+    <div class="context-title">
+        Context Area Title
+    </div>
+
+    <div>
+        <ckeditor [data]="editorData" [config]="config" [editor]="Editor" [disabled]="isDisabled" id="context-edior-cke" class="context-edior"
+            name="classic-editor">
+        </ckeditor>
+    </div>
+
+    <div class="context-actions">
+        <div class="text-center docUploadDiv">
+            <input type="file" id="fileSelector" class="customInputFile" accept=".txt"
+                (change)="onFileUpload($event)" onclick="this.value = null" />
+            <label for="fileSelector" class="browse-file">
+                <span>Upload File</span>
+            </label>
+        </div>
+        <div class="filename">
+           <span> {{fileName}} </span> 
+        </div>
+        <div class="spacer">
+            &nbsp;
+        </div>
+        <div class="context-action-btns">
+            <button mat-flat-button color="primary" class="context-action-btn">
+                Clear Content
+            </button>
+            &nbsp;
+            <button mat-flat-button color="primary" class="context-action-btn">
+                Generate Questions
+            </button>
+        </div>
+
+    </div>
+
+</div>

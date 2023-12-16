@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditQuestionDialogComponent } from './edit-question-dialog/edit-question-dialog.component';
-
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,9 @@ import { EditQuestionDialogComponent } from './edit-question-dialog/edit-questio
     HttpClientModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

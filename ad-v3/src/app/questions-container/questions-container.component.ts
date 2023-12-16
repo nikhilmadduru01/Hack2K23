@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditQuestionDialogComponent } from '../edit-question-dialog/edit-question-dialog.component';
 import { QuestionFeedback } from '../models/feedback.model';
 import { FeedbackService } from '../services/feedback.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-questions-container',
@@ -22,7 +23,8 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
 
   selected_question_subscription: Subscription = new Subscription();
 
-  constructor(private questionService: QuestionService, public feedbackService: FeedbackService, public dialog: MatDialog) { }
+  constructor(private questionService: QuestionService, private feedbackService: FeedbackService, 
+    private dialog: MatDialog, private snackbar: MatSnackBar) { }
 
   public get current_question_id(): number {
     return this.questionService.fetchCurrentIndex() + 1;
@@ -86,6 +88,10 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
       } 
       if(this.current_question.id) {
         this.questionService.updateQuestion(this.current_question?.id, result);
+        let message = "Question Updated Successfully";
+        this.snackbar.open(message, undefined , {
+          duration: 2000
+        });
       }
     });
   }
@@ -94,5 +100,14 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
     feedback.contextId = 1;
     feedback.questionId = this.current_question?.id ?? 0; 
     this.feedbackService.saveFeedback(feedback);
+    this.openFeedbackSubmittedSnackbar();
+  }
+
+
+  openFeedbackSubmittedSnackbar() {
+   let message = "Feedback submitted successfully";
+   this.snackbar.open(message, undefined, {
+    duration: 2000
+   });
   }
 }
