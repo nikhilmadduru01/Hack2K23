@@ -181,7 +181,6 @@ def summarizer(text,model,tokenizer):
   return summary
 
 def get_nouns_multipartite(content):
-    print(content)
     """
     This function takes the content text given and then outputs the phrases which are build around the nouns , so that we can use them for context based distractors
     """
