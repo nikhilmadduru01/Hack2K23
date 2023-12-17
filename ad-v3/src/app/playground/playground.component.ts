@@ -31,7 +31,6 @@ export class PlaygroundComponent implements OnInit {
         (data) => { 
           if(data) {
             this.questionService.loadQuestions(data); 
-            this.generating_questions = false;
             this.questionGeneratedOnce = true;
           }
           this.generating_questions = false;

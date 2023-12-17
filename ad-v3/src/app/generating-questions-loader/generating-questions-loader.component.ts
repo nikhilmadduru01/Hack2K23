@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-generating-questions-loader',
   templateUrl: './generating-questions-loader.component.html',
-  styleUrls: ['./generating-questions-loader.component.scss']
+  styleUrls: ['./generating-questions-loader.component.scss', '../utility/colors.scss']
 })
-export class GeneratingQuestionsLoaderComponent implements OnInit {
+export class GeneratingQuestionsLoaderComponent implements OnChanges {
 
   @Input('showInstructions')
   showInstructions: boolean = false;
@@ -13,9 +14,10 @@ export class GeneratingQuestionsLoaderComponent implements OnInit {
   @Input('generatingQuestions')
   generatingQuestions: boolean = false;
 
-  constructor() { }
+  constructor(private spinnerService: NgxSpinnerService) { }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.generatingQuestions)
+      this.spinnerService.show();
   }
-
 }
