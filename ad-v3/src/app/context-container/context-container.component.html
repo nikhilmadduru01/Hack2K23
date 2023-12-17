@@ -3,10 +3,11 @@
         Context Area Title
     </div>
 
-    <div>
-        <ckeditor [data]="editorData" [config]="config" [editor]="Editor" [disabled]="isDisabled" id="context-edior-cke" class="context-edior"
-            name="classic-editor">
-        </ckeditor>
+    <div class="context-body">
+        <mat-form-field  appearance="fill" class="context-form">
+            <mat-label>Enter Context</mat-label>
+            <textarea matInput [(ngModel)]="contextForm" [placeholder]="placeholderText"></textarea>
+          </mat-form-field>          
     </div>
 
     <div class="context-actions">
@@ -24,11 +25,13 @@
             &nbsp;
         </div>
         <div class="context-action-btns">
-            <button mat-flat-button color="primary" class="context-action-btn">
-                Clear Content
+            <button mat-flat-button color="primary" class="context-action-btn" (click)="clearContext()">
+                Clear Context
             </button>
             &nbsp;
-            <button mat-flat-button color="primary" class="context-action-btn">
+            &nbsp;
+            <button mat-flat-button color="primary" class="context-action-btn" 
+                [disabled]="disableGenerateQuestions" (click)="generateQuestions()">
                 Generate Questions
             </button>
         </div>

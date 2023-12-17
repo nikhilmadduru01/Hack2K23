@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MCQQuestion } from '../models/question.model';
 import { Subscription } from 'rxjs';
 import { QuestionService } from '../services/question.service';
@@ -18,8 +18,6 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
   current_question_feedback!: QuestionFeedback;
 
   current_question!: MCQQuestion;
-
-  loading:boolean = false;
 
   selected_question_subscription: Subscription = new Subscription();
 
@@ -47,12 +45,13 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.loading = true;
-    this.questionService.loadQuestions();
     this.current_question = this.questionService.fetchCurrentQuestion();
+    this.current_question_feedback = {
+      comment: '',
+      rating: '2'
+    }
     this.selected_question_subscription = this.questionService.question_subject.subscribe((question) => {
       this.current_question = question;
-      this.loading = this.current_question == null;
       if(this.current_question.id)
         this.current_question_feedback = this.feedbackService.fetchFeedback(this.current_question?.id) ??  {
           comment: '',

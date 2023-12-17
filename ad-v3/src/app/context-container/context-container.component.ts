@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { QuestionContext } from '../models/context.model';
+import { QuestionService } from '../services/question.service';
+import { map } from 'rxjs';
 
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 @Component({
@@ -9,20 +12,29 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./context-container.component.scss']
 })
 export class ContextContainerComponent implements OnInit {
-  public Editor: any = ClassicEditor;
-  public isDisabled = false;
 
   file!: File
 
+  contextForm: string = '';
 
-  public editorData = `<p><a href="https://yandex.ru/">https://yandex.ru/</a></p>`;
+  @Input('generatingQuestions')
+  generatingQuestions: boolean = false;
 
-  config: any = { toolbar: ['heading', '|', 'bold', 'italic'] }
 
-  constructor() { }
+  @Output('context')
+  contextEventEmitter : EventEmitter<QuestionContext> = new EventEmitter<QuestionContext>();
+
+  placeholderText: string = 'Type in or paste any plain text content';
+
+  constructor() {
+  }
 
   get fileName(): string {
     return (this.file) ? (this.file?.name + ` (${this.file?.size/100} KB)`) : '';
+  }
+
+  get disableGenerateQuestions(): boolean {
+    return !this.contextForm || this.contextForm.length < 1000 || this.generatingQuestions;
   }
 
   ngOnInit(): void {
@@ -36,4 +48,15 @@ export class ContextContainerComponent implements OnInit {
       console.error('No file selected.');
     }
   }
+
+  generateQuestions() {
+    if(!this.contextForm) {
+      return;
+    }
+    this.contextEventEmitter.next({context: this.contextForm});
+  }
+
+   clearContext() {
+    this.contextForm = '';
+   }
 }
