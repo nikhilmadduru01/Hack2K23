@@ -29,6 +29,7 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditQuestionDialogComponent } from './edit-question-dialog/edit-question-dialog.component';
 import { GeneratingQuestionsLoaderComponent } from './generating-questions-loader/generating-questions-loader.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { GeneratingQuestionsLoaderComponent } from './generating-questions-loade
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

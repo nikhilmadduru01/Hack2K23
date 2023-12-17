@@ -37,6 +37,10 @@ export class ContextContainerComponent implements OnInit {
     return !this.contextForm || this.contextForm.length < 1000 || this.generatingQuestions;
   }
 
+  get fetchSubmitBtnText(): string {
+    return this.generatingQuestions ? 'Generating...' : 'Generate Questions'
+  }
+
   ngOnInit(): void {
   }
 

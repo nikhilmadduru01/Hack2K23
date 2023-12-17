@@ -1,6 +1,6 @@
 <div class="context-container">
     <div class="context-title">
-        Context Area Title
+        Free Text Playground
     </div>
 
     <div class="context-body">
@@ -32,7 +32,7 @@
             &nbsp;
             <button mat-flat-button color="primary" class="context-action-btn" 
                 [disabled]="disableGenerateQuestions" (click)="generateQuestions()">
-                Generate Questions
+                {{fetchSubmitBtnText}}
             </button>
         </div>
 
