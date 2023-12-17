@@ -1,0 +1,83 @@
+@import '../utility/colors.scss';
+
+.context-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin: 0 30px;
+
+    .context-title {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+
+    .context-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        .docUploadDiv {
+            height: 100%;
+            width: 15%;
+            background-color: $primary;
+            border-radius: 4px;
+
+            .customInputFile {
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                visibility: hidden;
+                width: 1px;
+                height: 1px
+            }
+
+            .browse-file {
+                width: 100%;
+                text-align: center;
+                padding: 7px 0px;
+                cursor: pointer;
+                display: inline-block;
+                color: white;
+            }
+
+            span {
+                font-size: 15px;
+                font-weight: 500;
+            }
+
+        }
+
+        .filename {
+            width: 20%;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 7px;
+            color: $primary;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;;
+        }
+
+        .spacer {
+            flex: 1 1 auto;
+        }
+
+        .context-action-btns {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 35%;
+            .context-action-btn {
+                width: 50%;
+            }
+        }
+    }
+}
+
+:host ::ng-deep .context-edior .ck-editor__editable_inline {
+    height: 450px;
+}

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { QuestionFeedback } from '../models/feedback.model';
 
 @Component({
   selector: 'app-feedback-form',
@@ -7,15 +8,20 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class FeedbackFormComponent implements OnInit {
 
+  @Input('feedback')
+  feedback!: QuestionFeedback;
+
+  @Output('saveFeedback')
+  feedbackEmitter: EventEmitter<QuestionFeedback> = new EventEmitter<QuestionFeedback>();
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  feedback = {
-    rating: '2',
-    comments: ''
-  };
+  saveFeedBack() {
+    this.feedbackEmitter.next(this.feedback);
+  }
 
 
 }

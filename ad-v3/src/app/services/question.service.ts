@@ -9,24 +9,23 @@ import { HttpClient } from '@angular/common/http';
 export class QuestionService {
 
   question_subject: Subject<MCQQuestion> = new Subject<MCQQuestion>();
-  _current_index: number  = 0;
+  _current_index: number = 0;
 
   mockDataUrl: string = '../../assets/data/generated_questions.json';
 
   _generated_question_list: MCQQuestion[] = [];
 
-  constructor(private httpClient: HttpClient) { 
+  constructor(private httpClient: HttpClient) {
   }
 
 
   setQuestion(index: number): void {
     let selectedQuestion = this._generated_question_list.slice()[index];
-    console.log(selectedQuestion);
     this.question_subject.next(selectedQuestion);
   }
 
   NavigateNext(): void {
-    if(this._current_index + 1 >= this._generated_question_list.length) {
+    if (this._current_index + 1 >= this._generated_question_list.length) {
       return;
     }
     else {
@@ -36,7 +35,7 @@ export class QuestionService {
   }
 
   NavigatePrev(): void {
-    if(this._current_index <= 0 ) {
+    if (this._current_index <= 0) {
       return;
     }
     else {
@@ -60,15 +59,20 @@ export class QuestionService {
   loadQuestions(): void {
     this.httpClient.get<MCQQuestion[]>(this.mockDataUrl).pipe(
       map((data) => {
-        data.map((question,index) => question.id = index);
+        data.map((question, index) => question.id = index + 1);
         return data;
       })
     ).subscribe(
       res => {
-        console.log(res);
         this._generated_question_list = res;
-        this.setQuestion(0)
+        this.setQuestion(0);
       }
     )
+  }
+
+  updateQuestion(questionId: number, question: MCQQuestion) {
+    let index = this._generated_question_list.findIndex(question => question.id === questionId);
+    this._generated_question_list[index] = question;
+    this.setQuestion(index);
   }
 }

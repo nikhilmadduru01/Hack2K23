@@ -3,13 +3,13 @@
         Loader
     </div>
 
-    <div  *ngIf="!loading" class="question">
+    <div *ngIf="!loading" class="question">
         <div class="question-info">
             <div class="question-info-text"> 
                 Question {{ current_question_id }} of {{ question_length }}  
                 <mat-divider class="mat-divider-question">
                 </mat-divider></div>  
-            <button  mat-mini-fab class="question-info-btn" color="primary">
+            <button  mat-mini-fab class="question-info-btn" color="primary" (click)="openEditDialog()">
                 <mat-icon>
                     edit
                 </mat-icon>
@@ -40,7 +40,8 @@
         </div>
         <mat-divider class="mat-divider-question"></mat-divider>
         <div class="feedback-centre">
-            <app-feedback-form></app-feedback-form>
+            <app-feedback-form [feedback]="current_question_feedback" (saveFeedback)="saveFeedback($event)" >
+            </app-feedback-form>
         </div>
     </div>
 </div>
