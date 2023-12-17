@@ -1,0 +1,54 @@
+<div class="edit-question-container">
+    <div class="edit-form-title">
+        Edit Question
+    </div>
+    <form [formGroup]="questionForm" class="edit-question-form-field">
+        <mat-form-field  appearance="fill" class="edit-question">
+            <mat-label>Question Text</mat-label>
+            <textarea matInput formControlName="questionText" type="text"></textarea>
+        </mat-form-field>
+        <div class="options-title">
+            Options
+        </div>
+        <div formArrayName="aliases1" class="edit-options">
+            <mat-form-field color="primary"  appearance="fill" *ngFor="let alias of aliases1.controls; let i = index" class="edit-option-form-field">
+                <mat-label>Option - {{capitalizeString(aliases1keys[i])}}</mat-label>
+                <input matInput [formControlName]="i" type="text">
+            </mat-form-field>
+        </div>
+
+        <div formArrayName="aliases2" class="edit-options">
+            <mat-form-field color="primary"  appearance="fill" *ngFor="let alias of aliases2.controls; let i = index" class="edit-option-form-field">
+                <mat-label>Option - {{capitalizeString(aliases2keys[i])}}</mat-label>
+                <input matInput [formControlName]="i" type="text">
+            </mat-form-field>
+        </div>
+
+        <div class="options-title">
+            Correct Option
+        </div>
+        
+        <div class="select-correct-option">
+            <mat-form-field  appearance="fill" class="correct-option">
+                <mat-label>Select Correct Option</mat-label>
+                <mat-select formControlName="correctOption">
+                  <mat-option *ngFor="let i of data.options" [value]="i.optionId"> {{capitalizeString(i.optionId)}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+            <div class="correct-option-selected">
+                {{fetchCorrectAnswer()}}
+            </div>
+        </div>
+    </form>
+
+    <div class="edit-actions">
+        <button mat-flat-button color="primary" class="edit-action-btn" (click)="close()">
+            Close
+        </button>
+
+        <button mat-flat-button color="primary" class="edit-action-btn" [disabled]="disableSaveBtn" (click)="saveQuestion()">
+            Save
+        </button>
+    </div>
+</div>

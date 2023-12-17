@@ -1,0 +1,47 @@
+<div class="questions-container-2">
+    <div *ngIf="loading">
+        Loader
+    </div>
+
+    <div *ngIf="!loading" class="question">
+        <div class="question-info">
+            <div class="question-info-text"> 
+                Question {{ current_question_id }} of {{ question_length }}  
+                <mat-divider class="mat-divider-question">
+                </mat-divider></div>  
+            <button  mat-mini-fab class="question-info-btn" color="primary" (click)="openEditDialog()">
+                <mat-icon>
+                    edit
+                </mat-icon>
+            </button>
+        </div>
+        <div class="question-text">
+            <p>
+                {{ current_question.questionText }}
+            </p>
+        </div>
+        <div class="options-list">
+                <mat-card  *ngFor="let i of current_question.options" [ngClass]="{'option-tile':true,'correct-option-tile': i.optionId === current_question.correctOption}">
+                    <div class="option-id">
+                        {{capitalizeString(i.optionId)}}.
+                    </div>
+                    <div class="option-value">
+                        {{capitalizeString(i.optionValue)}}
+                    </div>
+                </mat-card>
+        </div>  
+        <div class="question-actions">
+            <button mat-flat-button color="primary" class="question-action-button" (click)="navigateToPrevQuestion()" [disabled]="disable_prev_btn">
+                Prev
+            </button>
+            <button mat-flat-button color="primary" class="question-action-button" (click)="navigateToNextQuestion()" [disabled]="disable_next_btn">
+                Next
+            </button>
+        </div>
+        <mat-divider class="mat-divider-question"></mat-divider>
+        <div class="feedback-centre">
+            <app-feedback-form [feedback]="current_question_feedback" (saveFeedback)="saveFeedback($event)" >
+            </app-feedback-form>
+        </div>
+    </div>
+</div>
