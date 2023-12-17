@@ -12,14 +12,15 @@
 
     <div class="context-actions">
         <div class="text-center docUploadDiv">
-            <input type="file" id="fileSelector" class="customInputFile" accept=".txt"
+            <input type="file" id="fileSelector" class="customInputFile" accept=".txt, .docx"
                 (change)="onFileUpload($event)" onclick="this.value = null" />
             <label for="fileSelector" class="browse-file">
                 <span>Upload File</span>
             </label>
         </div>
-        <div class="filename">
-           <span> {{fileName}} </span> 
+        <div class="file">
+           <span class="filename"> {{ fileName }} </span> &nbsp;
+           <span class="filesize"> {{ fileSize }}</span>
         </div>
         <div class="spacer">
             &nbsp;

@@ -30,7 +30,11 @@ export class ContextContainerComponent implements OnInit {
   }
 
   get fileName(): string {
-    return (this.file) ? (this.file?.name + ` (${this.file?.size/100} KB)`) : '';
+    return this.file?.name ?? "";
+  }
+
+  get fileSize(): string {
+    return  this.file?.size ? `(${this.file?.size/100} KB)` : "";
   }
 
   get disableGenerateQuestions(): boolean {
@@ -48,6 +52,14 @@ export class ContextContainerComponent implements OnInit {
     const file: File = event.target.files[0];
     if (file) {
       this.file = file;
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const filecontent = e.target.result;
+        console.log('File Conent: ', filecontent);
+
+        this.contextForm = filecontent;
+      }
+      reader.readAsText(file);
     } else {
       console.error('No file selected.');
     }
