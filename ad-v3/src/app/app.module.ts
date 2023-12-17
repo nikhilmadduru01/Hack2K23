@@ -28,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditQuestionDialogComponent } from './edit-question-dialog/edit-question-dialog.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { GeneratingQuestionsLoaderComponent } from './generating-questions-loader/generating-questions-loader.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     FooterComponent,
     FeedbackFormComponent,
     EditQuestionDialogComponent,
+    GeneratingQuestionsLoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,6 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

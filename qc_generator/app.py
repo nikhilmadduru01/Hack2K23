@@ -407,7 +407,6 @@ def get_mca_questions(context: str, keyword_len: int):
       output_dic_entry = {
           'questionText': '',
           'options': [],
-          'correct_option': '',
           'answer': ''
       }
 
@@ -429,7 +428,7 @@ def get_mca_questions(context: str, keyword_len: int):
 
         output = output + "Correct answer is : " + alpha_list[random_integer] + "\n\n"
 
-        output_dic_entry['correct_option'] = alpha_list[random_integer]
+        output_dic_entry['correctOption'] = alpha_list[random_integer]
 
       output_dic_entry['answer'] = answer
       output_json.append(output_dic_entry)

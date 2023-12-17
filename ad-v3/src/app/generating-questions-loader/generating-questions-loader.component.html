@@ -1,0 +1,27 @@
+<div *ngIf="generatingQuestions">
+    Generating Questions
+</div>
+
+<div *ngIf="showInstructions && !generatingQuestions" class="instructions-container">
+
+    <div class="instructions-title">Instructions</div>
+    <div class="instructions-subtitle">
+        <p>
+            Welcome to our application! Follow these steps to generate question from content:
+        </p>
+    </div>
+    <div class="instructions-body">
+        <mat-list class="instruction-list">
+            <mat-list-item class="instruction"><span>Step 1:</span> &nbsp; Load/Type the text in the provided text editor (min 1000 characters).</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 2:</span> &nbsp; Click on the generate questions button available at the bottom of the left <section>
+                
+            </section> to load the questions.</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 3:</span> &nbsp; Wait for the questions to be loaded.</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 4:</span> &nbsp; Modify the generated question and options and other data.</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 5:</span> &nbsp; Provide feedback on the generated questions.</mat-list-item>
+        </mat-list>
+    </div>
+    <div class="instructions-footer">
+        <p>Thank you for using our application!</p>
+    </div>
+</div>

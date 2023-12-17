@@ -1,9 +1,8 @@
 <div class="questions-container-2">
-    <div *ngIf="loading">
-        Loader
+    <div *ngIf="!question_length" class="questions-not-found">
+        Questions Not Found, Try generating with different content.
     </div>
-
-    <div *ngIf="!loading" class="question">
+    <div *ngIf="question_length" class="question">
         <div class="question-info">
             <div class="question-info-text"> 
                 Question {{ current_question_id }} of {{ question_length }}  
