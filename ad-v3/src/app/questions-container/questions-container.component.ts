@@ -57,7 +57,6 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
           comment: '',
           rating: '2',
         };
-      console.log(this.current_question_feedback);
     })
   }
 
