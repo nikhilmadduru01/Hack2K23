@@ -1,0 +1,124 @@
+@import '../utility/colors.scss';
+
+.questions-container-2 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    overflow-y: scroll;
+
+    .questions-not-found {
+        height: 100%;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .question {
+        height: 80%;
+        margin: 20px;
+
+        .question-info {
+            height: 8%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .question-info-text {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        .question-text {
+            max-height: 22%;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: start;
+            line-height: 30px;
+            margin-bottom: 40px;
+        }
+
+        .options-list {
+            max-height: 40%;
+
+            .option-tile {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-top: 20px;
+                width: 90%;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                border-radius: 8px;
+                font-size: 15px;
+                font-weight: 500;
+
+                .option-id {
+                    width: 8%;
+                    text-align: start;
+                }
+
+                .option-value {
+                    width: 92%;
+                    text-align: start;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .user-option-tile {
+                background-color: $primary;
+                color: white;
+            }
+
+            .correct-option-tile {
+                background-color: green;
+                color: white;
+            }
+        }
+
+        .question-explanation {
+            max-height: 10%;
+            margin-top: 60px;
+            font-size: 12px;
+            text-align: start;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .question-actions {
+            max-height: 10%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            justify-content: space-between;
+
+            .question-action-button {
+                width: 12%;
+                padding: 5px;
+            }
+        }
+
+        .question-actions_show_answers {
+            margin-top: 10px;
+        }
+
+        .mat-divider-question {
+            display: block;
+            margin: 4px 0;
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: $primary;
+        }
+    }
+}
