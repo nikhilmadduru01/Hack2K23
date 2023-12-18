@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { QuestionContext } from '../models/context.model';
-import { QuestionService } from '../services/question.service';
-import { map } from 'rxjs';
 
 
 
