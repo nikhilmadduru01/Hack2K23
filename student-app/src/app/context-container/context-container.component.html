@@ -2,6 +2,11 @@
     <div class="context-title">
         Free Text Playground
     </div>
+    <div class="query-container">
+        <button mat-button class="primary" (click)="openQueryDialog()" [disabled]="!contextForm">
+            <mat-icon class="query-icon" color="primary">help_outline</mat-icon>
+        </button>
+    </div>
 
     <div class="context-body">
         <mat-form-field  appearance="fill" class="context-form">

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { AskMeService } from '../services/ask-me.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-ask-me',
@@ -10,13 +11,15 @@ export class AskMeComponent implements OnInit {
 
   query: string;
   answer: string;
-  context: string;
+  context: string = "";
 
-  constructor(private askMeService: AskMeService) { }
+  constructor(private askMeService: AskMeService,
+              public matDialogRef: MatDialogRef<AskMeComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     this.answer = "";
-    this.context = ""
+    this.context = this.data;
   }
 
   onSubmit() {
@@ -28,6 +31,11 @@ export class AskMeComponent implements OnInit {
         this.answer = "This question is not related to this content! Please ask other questions"
       }
     });
+  }
+
+  close(){
+    this.query = "";
+    this.answer = "";
   }
 
 }

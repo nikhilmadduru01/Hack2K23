@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { QuestionContext } from '../models/context.model';
+import { QuestionService } from '../services/question.service';
+import { map } from 'rxjs';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AskMeComponent } from '../ask-me/ask-me.component';
 
 
 
@@ -23,7 +27,7 @@ export class ContextContainerComponent implements OnInit {
 
   placeholderText: string = 'Type in or paste any plain text content';
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
   }
 
   get fileName(): string {
@@ -67,5 +71,11 @@ export class ContextContainerComponent implements OnInit {
 
    clearContext() {
     this.contextForm = '';
+   }
+
+   openQueryDialog(){
+    this.dialog.open(AskMeComponent, {
+      data: this.contextForm
+    });
    }
 }
