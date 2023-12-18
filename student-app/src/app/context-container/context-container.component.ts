@@ -57,14 +57,6 @@ export class ContextContainerComponent implements OnInit {
         this.contextForm = filecontent;
       }
       reader.readAsText(file);
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const filecontent = e.target.result;
-        console.log('File Conent: ', filecontent);
-
-        this.contextForm = filecontent;
-      }
-      reader.readAsText(file);
     } else {
       console.error('No file selected.');
     }
