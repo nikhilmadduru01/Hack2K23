@@ -25,7 +25,7 @@ export class AskMeComponent implements OnInit {
   onSubmit() {
     this.askMeService.getAnswer(this.query, this.context).subscribe( data => {
       if(data){
-        this.answer = data;
+        this.answer = data.answer;
       }
       else{
         this.answer = "This question is not related to this content! Please ask other questions"
