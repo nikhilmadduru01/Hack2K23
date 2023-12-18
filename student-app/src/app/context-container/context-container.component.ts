@@ -3,6 +3,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { QuestionContext } from '../models/context.model';
 import { QuestionService } from '../services/question.service';
 import { map } from 'rxjs';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AskMeComponent } from '../ask-me/ask-me.component';
 
 
 
@@ -26,7 +28,7 @@ export class ContextContainerComponent implements OnInit {
 
   placeholderText: string = 'Type in or paste any plain text content';
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
   }
 
   get fileName(): string {
@@ -48,6 +50,14 @@ export class ContextContainerComponent implements OnInit {
     const file: File = event.target.files[0];
     if (file) {
       this.file = file;
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const filecontent = e.target.result;
+        console.log('File Conent: ', filecontent);
+
+        this.contextForm = filecontent;
+      }
+      reader.readAsText(file);
     } else {
       console.error('No file selected.');
     }
@@ -62,5 +72,11 @@ export class ContextContainerComponent implements OnInit {
 
    clearContext() {
     this.contextForm = '';
+   }
+
+   openQueryDialog(){
+    this.dialog.open(AskMeComponent, {
+      data: this.contextForm
+    });
    }
 }
