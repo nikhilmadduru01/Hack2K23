@@ -37,6 +37,17 @@
         .options-list {
             max-height: 50%;
 
+            .list-items {
+                list-style-type: none;
+                padding-left: 0px;
+
+                .list-item {
+                    margin-top: 5px;
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+
             .option-tile {
                 display: flex;
                 flex-direction: row;

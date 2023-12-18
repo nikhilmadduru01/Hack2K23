@@ -4,7 +4,6 @@ export interface MCQQuestion {
     options: MCQQuestionOption[];
     answer: string;
     correctOption: string;
-    isSubmitted?: boolean;
 }
 
 export interface MCQQuestionOption {

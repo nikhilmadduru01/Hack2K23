@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AskMeService {
 
-  endPoint: string = 'update the end-point';
+  endPoint: string = 'http://127.0.0.1:5000/generate_answers';
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAnswer(query: string): Observable<any> {
-    return this.httpClient.post(this.endPoint, query);
+  public getAnswer(query: string,context: string): Observable<any> {
+    let payload = {
+      context: context,
+      question: query
+    }
+    return this.httpClient.post(this.endPoint, payload);
   }
 }
