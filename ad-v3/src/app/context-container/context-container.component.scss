@@ -65,16 +65,33 @@
 
         }
 
-        .filename {
+        .file {
+            display: flex;
             width: 20%;
-            text-align: center;
-            font-size: 15px;
-            font-weight: 500;
-            padding: 7px;
-            color: $primary;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;;
+            margin-left: 10px;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            .filename {
+                width: 60%;
+                text-align: end;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 9px 0px;
+                color: $primary;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;;
+            }
+
+            .filesize {
+                width: 40%;
+                text-align: start;
+                font-size: 12px;
+                font-weight: 500;
+                padding: 9px 0px;
+                color: $primary;
+            }
         }
 
         .spacer {
