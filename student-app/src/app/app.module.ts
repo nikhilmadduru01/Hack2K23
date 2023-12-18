@@ -1,22 +1,72 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CKEditorModule } from 'ckeditor4-angular';
-import { HomeComponent } from './home/home.component';
-import { QuestionsListComponent } from './questions-list/questions-list.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from "@angular/material/divider";
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+import { NavigationComponent } from './navigation/navigation.component';
+import { PlaygroundComponent } from './playground/playground.component';
+import { HistoryComponent } from './history/history.component';
+import { QuestionsContainerComponent } from './questions-container/questions-container.component';
+import { ContextContainerComponent } from './context-container/context-container.component';
+import { FooterComponent } from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditQuestionDialogComponent } from './edit-question-dialog/edit-question-dialog.component';
+import { GeneratingQuestionsLoaderComponent } from './generating-questions-loader/generating-questions-loader.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AskMeComponent } from './ask-me/ask-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    QuestionsListComponent
+    NavigationComponent,
+    PlaygroundComponent,
+    HistoryComponent,
+    QuestionsContainerComponent,
+    ContextContainerComponent,
+    FooterComponent,
+    FeedbackFormComponent,
+    EditQuestionDialogComponent,
+    GeneratingQuestionsLoaderComponent,
+    AskMeComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    CKEditorModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule,
+    MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

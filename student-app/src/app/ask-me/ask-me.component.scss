@@ -1,0 +1,57 @@
+@import '../utility/colors.scss';
+
+
+.query-container {
+    height: 100%;
+    width: 100pc;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 30px;
+
+    .query-info {
+        // height: 12%;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+
+        .query-info-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    .query-form {
+        margin-left: 30px;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 20px;
+        align-items: flex-start;
+         height: 10%;
+        .textarea {
+            width: 80%;
+        }
+    }
+
+    .button-container{
+        position: absolute;
+        top: 300px;
+        right:630px;
+        color: white !important;
+        background-color: #3f51b5;
+    }
+
+    .answer-container {
+        position: absolute;
+        top: 340px;
+        margin-left: 100px;
+
+        .answer-card {
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+}
+

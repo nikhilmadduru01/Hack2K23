@@ -1,0 +1,27 @@
+<div class="query-container">
+    <div class="query-info">
+        <mat-icon class="query-icon" color="primary">
+            help_outline
+        </mat-icon>
+        &nbsp;
+        <div class="query-info-text">
+            You can ask any queries you have on the uploaded context
+        </div>
+    </div>
+    <div class="query-form">
+        <mat-form-field appearance="outline" class="textarea">
+            <mat-label>Any Query?</mat-label>
+            <textarea matInput [(ngModel)]="query" placeholder="Please ask any queries you have regarding this context"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="button-container">
+        <button mat-button class="primary" (click)="onSubmit()"> Answer </button>
+    </div>
+    <div class="answer-container" *ngIf="true">
+        <mat-card class="answer-card">
+            This question is not related to this content! Please ask other questions.
+        </mat-card>
+    </div>
+</div>
+
+

@@ -1,0 +1,10 @@
+<div class="playground-container">
+    <app-context-container class="context-container" [generatingQuestions]="generating_questions" (context)="generateQuestions($event)">
+    </app-context-container>
+    <mat-divider class="mat-divider-vertical" [vertical]="true"></mat-divider>
+
+    <app-questions-container *ngIf="questionGeneratedOnce && !generating_questions" class="questions-container">
+    </app-questions-container>
+    <app-generating-questions-loader *ngIf="!questionGeneratedOnce || generating_questions" [generatingQuestions]="generating_questions" [showInstructions]="!questionGeneratedOnce" class="questions-container">
+    </app-generating-questions-loader>
+</div>
