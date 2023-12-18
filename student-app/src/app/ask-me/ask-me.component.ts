@@ -22,6 +22,10 @@ export class AskMeComponent implements OnInit {
     this.context = this.data;
   }
 
+  get disableAnswerBtn(): boolean {
+    return !this.query;
+  }
+
   onSubmit() {
     this.askMeService.getAnswer(this.query, this.context).subscribe( data => {
       if(data){

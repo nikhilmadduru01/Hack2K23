@@ -75,7 +75,8 @@ export class ContextContainerComponent implements OnInit {
 
    openQueryDialog(){
     this.dialog.open(AskMeComponent, {
-      data: this.contextForm
+      data: this.contextForm,
+      disableClose: true,
     });
    }
 }

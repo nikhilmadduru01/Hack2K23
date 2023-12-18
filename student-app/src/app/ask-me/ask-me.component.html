@@ -17,10 +17,10 @@
     <div class="container">
         <div class="button-actions">
             <div class="button-container">
-                <button mat-button class="primary" (click)="onSubmit()"> Answer </button>
+                <button mat-flat-button color="primary" [disabled]="disableAnswerBtn" (click)="onSubmit()"> Answer </button>
             </div>
             <div class="button-container">
-                <button mat-button mat-dialog-close class="primary" (click)="close()"> Close </button>
+                <button mat-flat-button mat-dialog-close color="primary" (click)="close()"> Close </button>
             </div>
         </div>
         <div class="answer-container" *ngIf="answer">
