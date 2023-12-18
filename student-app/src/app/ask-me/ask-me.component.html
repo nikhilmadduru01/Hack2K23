@@ -8,6 +8,12 @@
             You can ask any queries you have on the uploaded context
         </div>
     </div>
+    <div class="query-form query-form-2">
+        <mat-form-field  appearance="fill" class="textarea">
+            <mat-label>Enter Context</mat-label>
+            <textarea matInput [(ngModel)]="context" placeholder="Enter Context"></textarea>
+          </mat-form-field> 
+    </div>
     <div class="query-form">
         <mat-form-field appearance="outline" class="textarea">
             <mat-label>Any Query?</mat-label>
@@ -17,9 +23,9 @@
     <div class="button-container">
         <button mat-button class="primary" (click)="onSubmit()"> Answer </button>
     </div>
-    <div class="answer-container" *ngIf="true">
+    <div class="answer-container" *ngIf="answer">
         <mat-card class="answer-card">
-            This question is not related to this content! Please ask other questions.
+           {{answer}}
         </mat-card>
     </div>
 </div>

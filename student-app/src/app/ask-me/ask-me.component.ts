@@ -10,15 +10,17 @@ export class AskMeComponent implements OnInit {
 
   query: string;
   answer: string;
+  context: string;
 
   constructor(private askMeService: AskMeService) { }
 
   ngOnInit(): void {
     this.answer = "";
+    this.context = ""
   }
 
   onSubmit() {
-    this.askMeService.getAnswer(this.query).subscribe( data => {
+    this.askMeService.getAnswer(this.query, this.context).subscribe( data => {
       if(data){
         this.answer = data;
       }

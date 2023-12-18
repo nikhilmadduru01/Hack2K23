@@ -23,18 +23,18 @@
                         {{capitalizeString(i.optionValue)}}
                     </div>
                 </mat-card> -->
-                <ul>
-              <li *ngFor="let option of current_question.options; let i = index">
-                <label>
-                  <input type="radio" name="question_{{current_question.id}}" 
-                         [value]="i" (change)="selectOption(current_question.id, i)">
-                  {{ option.optionId }} 
-                </label>
-              </li>
-            </ul>
+                <ul class="list-items">
+                    <li  class="list-item" *ngFor="let option of current_question.options; let i = index">
+                        <label>
+                            <input type="radio" [(ngModel)]="userAnswers[current_question.id]" name="question_{{current_question.id}}" [value]="option.optionId"
+                                (change)="selectOption(current_question.id, option.optionId)">
+                            {{ capitalizeString(option.optionValue) }}
+                        </label>
+                    </li>
+                </ul>
         </div>  
-            <div *ngIf="isSubmitted && userAnswers[current_question.id] != current_question.correctOption">
-                Correct Answer : {{ current_question.correctOption }} . {{ current_question.correctOption }}
+            <div *ngIf="userAnswers[current_question.id]">
+                Correct Answer : {{ capitalizeString(current_question.answer) }} .
             </div>
         <div class="question-actions">
             <button mat-flat-button color="primary" class="question-action-button" (click)="navigateToPrevQuestion()" [disabled]="disable_prev_btn">

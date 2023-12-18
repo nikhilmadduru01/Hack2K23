@@ -114,7 +114,7 @@ export class QuestionsContainerComponent implements OnInit, OnDestroy {
    });
   }
 
-  selectOption(questionId: number, optionIndex: number): void {
-    this.userAnswers[questionId] = this.current_question.options[optionIndex].optionId;
+  selectOption(questionId: number, optionId: string): void {
+    this.userAnswers[questionId] = optionId;
   }
 }
