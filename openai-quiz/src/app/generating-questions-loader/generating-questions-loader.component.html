@@ -1,0 +1,31 @@
+<div *ngIf="generatingQuestions" class="loader-container">
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#673ab7" type = "square-jelly-box" [fullScreen] = "false">
+        <p class="loader-title" > 
+            Generating Practice Questions, Please Wait...
+        </p>
+    </ngx-spinner>
+</div>
+
+<div *ngIf="showInstructions && !generatingQuestions" class="instructions-container">
+
+    <div class="instructions-title">Instructions</div>
+    <div class="instructions-subtitle">
+        <p>
+            Welcome to our application! Follow these steps to generate quiz from context:
+        </p>
+    </div>
+    <div class="instructions-body">
+        <mat-list class="instruction-list">
+            <mat-list-item class="instruction"><span>Step 1:</span> &nbsp; Load/Type a question of science in the provided form.</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 2:</span> &nbsp; Click on the generate quiz button
+                available at the top right of the section  to load the questions.</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 3:</span> &nbsp; Wait for the questions to be
+                loaded.</mat-list-item>
+            <mat-list-item class="instruction"><span>Step 5:</span> &nbsp; Provide feedback on the generated
+                questions.</mat-list-item>
+        </mat-list>
+    </div>
+    <div class="instructions-footer">
+        <p>Thank you for using our application!</p>
+    </div>
+</div>

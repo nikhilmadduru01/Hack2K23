@@ -1,0 +1,21 @@
+.context-container {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 30px 40px;
+
+    .context-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 10px 0px;
+    }
+
+    .context-body {
+        text-align: start;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 50px;
+    }
+}

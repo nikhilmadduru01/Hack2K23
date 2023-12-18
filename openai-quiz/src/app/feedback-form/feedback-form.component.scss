@@ -1,0 +1,54 @@
+@import '../utility/colors.scss';
+
+
+.feedback-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 30px;
+
+    .feedback-info {
+        height: 12%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .feedback-info-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .spacer {
+            flex: 1 1 auto;
+        }
+
+        .mat-divider-question {
+            display: block;
+            margin: 4px 0;
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: $primary;
+        }
+    }
+
+    .feedback-form {
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 20px;
+        align-items: flex-start;
+        height: 100%;
+        .textarea {
+            width: 70%;
+        }
+    
+        .rating-form {
+            width: 28%;
+        }
+    }
+}
+

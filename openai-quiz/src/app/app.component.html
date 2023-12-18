@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="question-toolbar">
+  Quiz Generation OpenAI
+</mat-toolbar>
+<div class="question-form">
+  <mat-form-field appearance="outline" class="question-form-field">
+    <mat-label>Enter Context</mat-label>
+    <textarea matInput [(ngModel)]="query" placeholder="Input Question"></textarea>
+  </mat-form-field>
+  &nbsp;
+  &nbsp;
+  <button mat-button color="primary" class="quiz-btn" [disabled]="disableBtn" (click)="generateQuiz()">
+    Generate Quiz 
+  </button>
+</div>
+<div>
+  <mat-divider>
+  </mat-divider>
+</div>
+
+<div class="loader" *ngIf="generationInProgress || !dataFetchedOnce">
+  <app-generating-questions-loader [generatingQuestions]="generationInProgress" [showInstructions]="!dataFetchedOnce" class="">
+  </app-generating-questions-loader>
+</div>
+
+<div class="wrapper" *ngIf="!generationInProgress && dataFetchedOnce">
+  <app-context [title]="topicTitle" [content]="content">
+  </app-context>
+  <mat-divider [vertical]="true">
+  </mat-divider>
+  <app-question-list>
+  </app-question-list>
+</div>
