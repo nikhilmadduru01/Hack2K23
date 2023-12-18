@@ -1,8 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { QuestionContext } from '../models/context.model';
-import { QuestionService } from '../services/question.service';
-import { map } from 'rxjs';
 
 
 
@@ -34,7 +31,7 @@ export class ContextContainerComponent implements OnInit {
   }
 
   get disableGenerateQuestions(): boolean {
-    return !this.contextForm || this.contextForm.length < 1000 || this.generatingQuestions;
+    return !this.contextForm || this.contextForm.length < 500 || this.generatingQuestions;
   }
 
   get fetchSubmitBtnText(): string {
@@ -48,6 +45,14 @@ export class ContextContainerComponent implements OnInit {
     const file: File = event.target.files[0];
     if (file) {
       this.file = file;
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const filecontent = e.target.result;
+        console.log('File Conent: ', filecontent);
+
+        this.contextForm = filecontent;
+      }
+      reader.readAsText(file);
     } else {
       console.error('No file selected.');
     }
