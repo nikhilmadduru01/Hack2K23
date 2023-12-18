@@ -1,0 +1,41 @@
+<div class="context-container">
+    <div class="context-title">
+        Free Text Playground
+    </div>
+
+    <div class="context-body">
+        <mat-form-field  appearance="fill" class="context-form">
+            <mat-label>Enter Context</mat-label>
+            <textarea matInput [(ngModel)]="contextForm" [placeholder]="placeholderText"></textarea>
+          </mat-form-field>          
+    </div>
+
+    <div class="context-actions">
+        <div class="text-center docUploadDiv">
+            <input type="file" id="fileSelector" class="customInputFile" accept=".txt"
+                (change)="onFileUpload($event)" onclick="this.value = null" />
+            <label for="fileSelector" class="browse-file">
+                <span>Upload File</span>
+            </label>
+        </div>
+        <div class="filename">
+           <span> {{fileName}} </span> 
+        </div>
+        <div class="spacer">
+            &nbsp;
+        </div>
+        <div class="context-action-btns">
+            <button mat-flat-button color="primary" class="context-action-btn" (click)="clearContext()">
+                Clear Context
+            </button>
+            &nbsp;
+            &nbsp;
+            <button mat-flat-button color="primary" class="context-action-btn" 
+                [disabled]="disableGenerateQuestions" (click)="generateQuestions()">
+                {{fetchSubmitBtnText}}
+            </button>
+        </div>
+
+    </div>
+
+</div>
