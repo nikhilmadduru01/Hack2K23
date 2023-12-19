@@ -1,6 +1,6 @@
 <div *ngIf="generatingQuestions" class="loader-container">
     <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color="#673ab7" type = "square-jelly-box" [fullScreen] = "false">
-        <div class="loader-title"> Generating Questions, Please Wait... </div>
+        <div class="loader-title"> Generating Multiple Choice Questions, Please Wait... </div>
     </ngx-spinner>
 </div>
 
@@ -9,12 +9,12 @@
     <div class="instructions-title">Instructions</div>
     <div class="instructions-subtitle">
         <p>
-            Welcome to our application! Follow these steps to generate question from content:
+            Welcome to our application! Follow these steps to generate question from concept:
         </p>
     </div>
     <div class="instructions-body">
         <mat-list class="instruction-list">
-            <mat-list-item class="instruction"><span>Step 1:</span> &nbsp; Load/Type the text in the provided text
+            <mat-list-item class="instruction"><span>Step 1:</span> &nbsp; Load/Type the concept text in the provided text
                 editor (min 1000 characters).</mat-list-item>
             <mat-list-item class="instruction"><span>Step 2:</span> &nbsp; Click on the generate questions button
                 available at the bottom of the left  to load the questions.</mat-list-item>

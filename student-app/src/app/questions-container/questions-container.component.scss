@@ -7,6 +7,17 @@
     justify-content: flex-start;
     height: 100%;
 
+    .questions-not-found {
+        height: 100%;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
     .question {
         height: 80%;
         margin: 20px;

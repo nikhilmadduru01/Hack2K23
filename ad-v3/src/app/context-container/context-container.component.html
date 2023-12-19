@@ -1,24 +1,24 @@
 <div class="context-container">
     <div class="context-title">
-        Free Text Playground
+        Concept Area
     </div>
 
     <div class="context-body">
         <mat-form-field  appearance="fill" class="context-form">
-            <mat-label>Enter Context</mat-label>
+            <mat-label>Enter Concept</mat-label>
             <textarea matInput [(ngModel)]="contextForm" [placeholder]="placeholderText"></textarea>
           </mat-form-field>          
     </div>
 
     <div class="context-actions">
         <div class="text-center docUploadDiv">
-            <input type="file" id="fileSelector" class="customInputFile" accept=".txt, .docx"
+            <input type="file" id="fileSelector" class="customInputFile" accept=".txt"
                 (change)="onFileUpload($event)" onclick="this.value = null" />
             <label for="fileSelector" class="browse-file">
                 <span>Upload File</span>
             </label>
         </div>
-        <div class="file">
+        <div class="file" *ngIf="file">
            <span class="filename"> {{ fileName }} </span> &nbsp;
            <span class="filesize"> {{ fileSize }}</span>
         </div>
@@ -26,8 +26,8 @@
             &nbsp;
         </div>
         <div class="context-action-btns">
-            <button mat-flat-button color="primary" class="context-action-btn" (click)="clearContext()">
-                Clear Context
+            <button mat-flat-button color="primary" [disabled]="disableClearConcept" class="context-action-btn" (click)="clearContext()">
+                Clear Concept
             </button>
             &nbsp;
             &nbsp;

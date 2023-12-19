@@ -20,10 +20,8 @@ import { AppComponent } from './app.component';
 
 import { NavigationComponent } from './navigation/navigation.component';
 import { PlaygroundComponent } from './playground/playground.component';
-import { HistoryComponent } from './history/history.component';
 import { QuestionsContainerComponent } from './questions-container/questions-container.component';
 import { ContextContainerComponent } from './context-container/context-container.component';
-import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,10 +34,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AppComponent,
     NavigationComponent,
     PlaygroundComponent,
-    HistoryComponent,
     QuestionsContainerComponent,
     ContextContainerComponent,
-    FooterComponent,
     FeedbackFormComponent,
     EditQuestionDialogComponent,
     GeneratingQuestionsLoaderComponent

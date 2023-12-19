@@ -52,7 +52,6 @@ export class ContextContainerComponent implements OnInit {
       const reader = new FileReader();
       reader.onload = (e: any) => {
         const filecontent = e.target.result;
-        console.log('File Conent: ', filecontent);
 
         this.contextForm = filecontent;
       }

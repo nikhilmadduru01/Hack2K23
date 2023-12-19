@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PlaygroundComponent } from './playground/playground.component';
-import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
   {
@@ -11,10 +10,6 @@ const routes: Routes = [
   {
     path: 'playground',
     component: PlaygroundComponent
-  },
-  {
-    path: 'history',
-    component: HistoryComponent
   }
 ];
 

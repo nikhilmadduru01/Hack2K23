@@ -13,7 +13,7 @@ import { map } from 'rxjs';
 })
 export class ContextContainerComponent implements OnInit {
 
-  file!: File
+  file: File | undefined;
 
   contextForm: string = '';
 
@@ -41,6 +41,10 @@ export class ContextContainerComponent implements OnInit {
     return !this.contextForm || this.contextForm.length < 1000 || this.generatingQuestions;
   }
 
+  get disableClearConcept(): boolean {
+    return this.contextForm.length == 0;
+  }
+
   get fetchSubmitBtnText(): string {
     return this.generatingQuestions ? 'Generating...' : 'Generate Questions'
   }
@@ -55,7 +59,6 @@ export class ContextContainerComponent implements OnInit {
       const reader = new FileReader();
       reader.onload = (e: any) => {
         const filecontent = e.target.result;
-        console.log('File Conent: ', filecontent);
 
         this.contextForm = filecontent;
       }
@@ -74,5 +77,6 @@ export class ContextContainerComponent implements OnInit {
 
    clearContext() {
     this.contextForm = '';
+    this.file = undefined;
    }
 }

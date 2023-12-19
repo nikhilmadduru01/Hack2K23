@@ -1,16 +1,16 @@
 <div class="context-container">
     <div class="context-title">
-        Free Text Playground
+        Concept Area
     </div>
     <div class="query-container">
-        <button mat-button class="primary" (click)="openQueryDialog()" [disabled]="!contextForm">
+        <button mat-button class="primary" (click)="openQueryDialog()" [disabled]="disableGenerateQuestions">
             <mat-icon class="query-icon" color="primary">help_outline</mat-icon>
         </button>
     </div>
 
     <div class="context-body">
         <mat-form-field  appearance="fill" class="context-form">
-            <mat-label>Enter Context</mat-label>
+            <mat-label>Enter Concept</mat-label>
             <textarea matInput [(ngModel)]="contextForm" [placeholder]="placeholderText"></textarea>
           </mat-form-field>          
     </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="context-action-btns">
             <button mat-flat-button color="primary" class="context-action-btn" (click)="clearContext()">
-                Clear Context
+                Clear Concept
             </button>
             &nbsp;
             &nbsp;

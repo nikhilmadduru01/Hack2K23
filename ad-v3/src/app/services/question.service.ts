@@ -81,8 +81,8 @@ export class QuestionService {
   }
 
   loadQuestions(question_list: MCQQuestion[]): void {
+    this._current_index = 0;
     this._generated_question_list = question_list;
-     
   }
 
   updateQuestion(questionId: number, question: MCQQuestion) {
